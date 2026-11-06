@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,12 +9,96 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txt_titre_ec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Douane Temporelle"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/edt_nomvoyageur_ec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nom du voyageur"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/txt_titre_ec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp" />
+
+    <EditText
+        android:id="@+id/edt_datenaissance_ec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Année de naissance"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/edt_nomvoyageur_ec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp" />
+
+    <EditText
+        android:id="@+id/edt_destination_ec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Année de destination"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/edt_datenaissance_ec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_motif_ec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_destination_ec">
+
+        <RadioButton
+            android:id="@+id/rb_tourisme_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tourisme" />
+
+        <RadioButton
+            android:id="@+id/rb_modification_ec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modification du passé" />
+
+        <RadioButton
+            android:id="@+id/rb_fuite_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fuite" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_inspecter_ec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Inspecter le profil"
+        app:layout_constraintTop_toBottomOf="@id/rg_motif_ec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
