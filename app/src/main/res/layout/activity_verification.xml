@@ -1,12 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    android:orientation="horizontal"
+    android:background="#F8F5FC">
 
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Image a gauche : 30% -->
+    <ImageView
+        android:id="@+id/img_passeport_ec"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop"
+        android:contentDescription="Passeport temporel" />
+
+    <!-- Informations a droite : 70% -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="12dp"
+        android:background="#F8F5FC">
+
+        <TextView
+            android:id="@+id/txt_titre_verification_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verification du voyageur"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/txt_nom_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom du voyageur :"
+            android:textSize="17sp"
+            android:textColor="#333333"
+            android:layout_below="@id/txt_titre_verification_ec"
+            android:layout_marginTop="35dp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/txt_age_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Age temporel :"
+            android:textSize="17sp"
+            android:textColor="#333333"
+            android:layout_below="@id/txt_nom_ec"
+            android:layout_marginTop="25dp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/txt_motif_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motif du voyage :"
+            android:textSize="17sp"
+            android:textColor="#333333"
+            android:layout_below="@id/txt_age_ec"
+            android:layout_marginTop="25dp"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_approuver_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Approuver le saut temporel"
+            android:textSize="13sp"
+            android:backgroundTint="#23834A"
+            android:layout_above="@id/btn_refuser_ec"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_refuser_ec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refuser (Risque de paradoxe)"
+            android:textSize="13sp"
+            android:backgroundTint="#B63838"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>
